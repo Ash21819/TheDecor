@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Header, Footer } from "@/Component";
+import { MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +25,21 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
+        <Link
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-4 right-4 z-50"
+        >
+          <div className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 rounded-full shadow-lg transition duration-300 w-16 h-16 p-4 flex items-center justify-center animate-pulse hover:scale-110 hover:shadow-2xl hover:animate-none">
+            <div className="absolute inset-0 rounded-full bg-green-500 opacity-50 blur-lg animate-ping"></div>
+
+            <MessageCircle className="w-8 h-8 text-white" />
+          </div>
+        </Link>
       </body>
     </html>
   );
