@@ -7,7 +7,7 @@ export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-gradient-to-br from-amber-700/30 to-white/30 backdrop-blur-sm">
       <nav className="h-16 flex justify-between items-center px-4 sm:px-6 lg:px-15 xl:px-15">
         <h1 className="text-2xl sm:text-3xl font-bold text-amber-700">
           <Link href="/">TheDecor</Link>
@@ -50,7 +50,7 @@ export const Header = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-md">
+        <div className="md:hidden  border-t border-gray-200  bg-gradient-to-br from-white/30 to-amber-700/30 backdrop-blur-sm p-6 rounded-lg text-gray-900 shadow-lg z-1">
           <ul className="flex flex-col px-4 py-3 gap-3 text-gray-700 text-base font-medium">
             <li>
               <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
